@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   
   /* Tabelle ohne äußeren Rahmen, aber mit inneren, weißen Trennlinien (5px breit) */

@@ -18,6 +18,8 @@ const WINNING_COMBINATIONS = [
 
 let currentPlayer = 'circle';
 
+let gameOver = false;
+
 
 function init() {
     render();
@@ -26,7 +28,6 @@ function init() {
 function render() {
     const contentDiv = document.getElementById('content');
 
-    // Generate table HTML
     let tableHtml = '<table>';
     for (let i = 0; i < 3; i++) {
         tableHtml += '<tr>';
@@ -44,22 +45,41 @@ function render() {
     }
     tableHtml += '</table>';
 
-    // Set table HTML to contentDiv
     contentDiv.innerHTML = tableHtml;
 }
 
 function handleClick(cell, index) {
-    if (fields[index] === null) {
+    if (fields[index] === null && !gameOver) {
         fields[index] = currentPlayer;
         cell.innerHTML = currentPlayer === 'circle' ? generateCircleSVG() : generateCrossSVG();
         cell.onclick = null;
         currentPlayer = currentPlayer === 'circle' ? 'cross' : 'circle';
 
-        if (isGameFinished()) {
-            const winCombination = getWinningCombination();
+        const winCombination = getWinningCombination();
+        if (winCombination) {
             drawWinningLine(winCombination);
+            gameOver = true;
+        } else if (fields.every((field) => field !== null)) {
+            gameOver = true;
         }
     }
+}
+
+
+function restartGame(){
+    fields = [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+    ];
+    gameOver = false;
+    render();
 }
 
 function isGameFinished() {

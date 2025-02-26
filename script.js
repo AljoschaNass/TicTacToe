@@ -139,12 +139,10 @@ function drawWinningLine(combination) {
     const lineColor = '#ffffff';
     const lineWidth = 5;
 
-  
     const startCell = document.querySelectorAll(`td`)[combination[0]];
     const endCell = document.querySelectorAll(`td`)[combination[2]];
     const startRect = startCell.getBoundingClientRect();
     const endRect = endCell.getBoundingClientRect();
-
   
     const contentRect = document.getElementById('content').getBoundingClientRect();
   
@@ -153,7 +151,6 @@ function drawWinningLine(combination) {
     );
     const lineAngle = Math.atan2(endRect.top - startRect.top, endRect.left - startRect.left);
 
-  
     const line = document.createElement('div');
     line.style.position = 'absolute';
     line.style.width = `${lineLength}px`;

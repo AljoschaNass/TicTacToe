@@ -1,4 +1,3 @@
-/* Hintergrundfarbe und Schriftart für die gesamte Seite */
 body {
     background-color: #323232;
     font-family: 'Open Sans', sans-serif;
@@ -11,7 +10,6 @@ body {
     text-align: center;
   }
   
-  /* Container, in den die Tabelle gerendert wird */
   #content {
     width: 320px;
     margin:  100px auto;
@@ -21,13 +19,11 @@ body {
     position: relative;
   }
   
-  /* Tabelle ohne äußeren Rahmen, aber mit inneren, weißen Trennlinien (5px breit) */
   table {
     width: 100%;
-    border-collapse: collapse; /* Verhindert doppelte Rahmen, sodass die Zellenränder zusammengelegt werden */
+    border-collapse: collapse;
   }
   
-  /* Tabellenzellen mit 5px weißem Rand */
   td {
     width: 33.33%;
     height: 100px;
@@ -42,25 +38,19 @@ body {
   td:hover{
     background-color: rgba(255, 255, 255, 0.307);
   }
-  
-  /* Entfernen der äußeren Rahmen der Tabelle: nur die inneren Trennlinien bleiben sichtbar */
-  
-  /* Obere Zellen: kein oberer Rand */
+    
   tr:first-child td {
     border-top: none;
   }
   
-  /* Erste Zellen jeder Zeile: kein linker Rand */
   tr td:first-child {
     border-left: none;
   }
   
-  /* Untere Zellen: kein unterer Rand */
   tr:last-child td {
     border-bottom: none;
   }
   
-  /* Letzte Zellen jeder Zeile: kein rechter Rand */
   tr td:last-child {
     border-right: none;
   }

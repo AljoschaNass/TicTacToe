@@ -24,11 +24,11 @@ const colorCircle = '#00B0EF';
 const colorNotActive = '#717171';
 
 function init() {
-    render();
+    renderPlayground();
     renderCurrentPlayer();
 }
 
-function render() {
+function renderPlayground() {
     let contentDiv = document.getElementById('content');
 
     let tableHtml = '<table>';
@@ -92,7 +92,7 @@ function restartGame(){
     ];
     gameOver = false;
     currentPlayer = 'circle';
-    render();
+    renderPlayground();
     renderCurrentPlayer();
 }
 
@@ -137,8 +137,7 @@ function generateCrossSVG(color) {
           <animate attributeName="x2" values="${width}; 0" dur="200ms" />
           <animate attributeName="y2" values="0; ${height}" dur="200ms" />
         </line>
-      </svg>
-    `;
+      </svg>`;
     return svgHtml;
 }
 
